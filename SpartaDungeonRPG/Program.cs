@@ -187,6 +187,7 @@ namespace SpartaDungeonRPG
 
             public void LoadToCharacter(string filePath)
             {
+                inventoryItemList.Clear(); //초기화시키고 불러와야함
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     string line;
