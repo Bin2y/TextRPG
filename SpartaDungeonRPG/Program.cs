@@ -218,10 +218,7 @@ namespace SpartaDungeonRPG
 
                             inventoryItemList.Add(new Item(itemName, itemAbility, itemInfo, itemPrice, type, isEquip, isSell));
                         }
-                        //string itemName, int itemAbility, string itemInfo, string itemPrice, int type
                     }
-
-
                 }
                 //Console.WriteLine("Inventory 데이터를 불러왔습니다.");
                 //Console.WriteLine();
@@ -279,7 +276,6 @@ namespace SpartaDungeonRPG
                                 armorItemNum = i + 1;
                             }
                             Console.WriteLine($"- {i + 1} [E]{inventoryItemList[i].itemName}  | {inventoryItemList[i].getItemStat()} +{inventoryItemList[i].itemAbility} | {inventoryItemList[i].itemInfo} | {inventoryItemList[i].itemPrice}");
-
                         }
                         else
                         {
@@ -513,7 +509,6 @@ namespace SpartaDungeonRPG
                         }
                         if (money >= ItemPrice)
                         {
-                            //money -= ItemPrice;
                             Character.Instance.moneyAmount -= ItemPrice;
                             //Console.WriteLine($"{Character.Instance.moneyAmount}, {ItemPrice}");
                             storeItems[itemNum - 1].isSell = true;
@@ -629,12 +624,6 @@ namespace SpartaDungeonRPG
                         continue;
                     }
 
-
-
-
-
-
-
                     switch (input)
                     {
                         case "0": return;
@@ -683,7 +672,6 @@ namespace SpartaDungeonRPG
                 }
 
             }
-
             public void FailDungeon()
             {
                 Character.Instance.health_ab /= 2;
@@ -763,7 +751,6 @@ namespace SpartaDungeonRPG
             public bool isEquip;
             public bool isSell;
 
-
             public Item()
             {
                 itemName = "Unkown";
@@ -800,9 +787,6 @@ namespace SpartaDungeonRPG
 
             }
         }
-
-
-
         static void GenerateItem()
         {
             string[,] itemsInfo =
